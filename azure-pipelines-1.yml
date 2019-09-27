@@ -33,7 +33,7 @@ stages:
       inputs:
         workingDirectory: ''
         gradleWrapperFile: 'gradlew'
-        gradleOptions: '--debug'
+        gradleOptions: '-d'
         javaHomeOption: 'JDKVersion'
         jdkVersionOption: '1.11'
         jdkArchitectureOption: 'x64'
