@@ -1,13 +1,4 @@
 # Docker
-- task: Gradle@2
-  inputs:
-    gradleWrapperFile: 'gradlew'
-    options: '--debug'
-    tasks: 'build'
-    publishJUnitResults: true
-    testResultsFiles: '**/TEST-*.xml'
-    javaHomeOption: 'JDKVersion'
-    sonarQubeRunAnalysis: false
 # Build a Docker image 
 # https://docs.microsoft.com/azure/devops/pipelines/languages/docker
 
@@ -33,6 +24,7 @@ stages:
       inputs:
         workingDirectory: ''
         gradleWrapperFile: 'gradlew'
+        options: '--debug'
         gradleOptions: '-Xmx1024m'
         javaHomeOption: 'JDKVersion'
         jdkVersionOption: '1.11'
