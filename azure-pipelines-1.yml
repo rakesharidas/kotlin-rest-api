@@ -33,13 +33,13 @@ stages:
       inputs:
         workingDirectory: ''
         gradleWrapperFile: 'gradlew'
-        gradleOptions: '-d'
+        gradleOptions: '-Xmx1024m'
         javaHomeOption: 'JDKVersion'
         jdkVersionOption: '1.11'
         jdkArchitectureOption: 'x64'
         publishJUnitResults: false
         testResultsFiles: '**/TEST-*.xml'
-        tasks: 'build'
+        tasks: 'build --debug'
     - task: Docker@2
       displayName: Build an image
       inputs:
