@@ -32,10 +32,8 @@ stages:
         testResultsFiles: '**/TEST-*.xml'
         tasks: 'bootJar'
     - task: Docker@2
-      displayName: Build an image
       inputs:
-        command: build
-        repository: kotlin/kotlin-first-rest-api
-        dockerfile: '**/Dockerfile'
-        tags: |
-          $(tag)
+        containerRegistry: 'ACR-Service Connection'
+        repository: 'kotlin/kotlin-first-rest-api'
+        command: 'buildAndPush'
+        Dockerfile: '**/Dockerfile'
