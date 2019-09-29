@@ -22,11 +22,11 @@ apply plugin: 'kotlin-spring'
 apply plugin: 'eclipse-wtp'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
-apply plugin: 'war'
+//apply plugin: 'war'
 // apply this docker plugin
-apply plugin: 'docker'
+//apply plugin: 'docker'
 
-group = 'com.example'
+group = 'com.kotlinapi'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = 1.8
 compileKotlin {
@@ -61,8 +61,8 @@ dependencies {
 }
 
 // write this docker build task, this will run just after "./gradlew build" command
-task buildDocker(type: Docker, dependsOn: build) {
-    push = true
+/*task buildDocker(type: Docker, dependsOn: build) {
+    push = false
     applicationName = bootJar.baseName
     dockerfile = file('Dockerfile')
     doFirst {
@@ -71,4 +71,4 @@ task buildDocker(type: Docker, dependsOn: build) {
             into stageDir
         }
     }
-}
+}*/
