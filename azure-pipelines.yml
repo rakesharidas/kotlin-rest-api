@@ -37,3 +37,6 @@ stages:
               repository: 'kotlin/kotlin-first-rest-api'
               command: 'buildAndPush'
               Dockerfile: '**/Dockerfile'
+              tags: |
+                $(Build.BuildId)
+                latest
